@@ -6,6 +6,10 @@ const postSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    firstName: {
+      type: String,
+      required: true,
+    },
     lastName: {
       type: String,
       required: true,
@@ -19,13 +23,11 @@ const postSchema = mongoose.Schema(
       of: Boolean,
     },
     comments: {
-      types: Array,
+      type: Array,
       default: [],
     },
   },
-  {
-    timestamp: true,
-  }
+  { timestamps: true }
 );
 
 const Post = mongoose.model("Post", postSchema);
